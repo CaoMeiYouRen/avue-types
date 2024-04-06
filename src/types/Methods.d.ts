@@ -6,85 +6,85 @@
  */
 
 export interface Methods {
-  /**
-   * 打开表单新增窗口
-   */
-  rowAdd?: () => {};
-  /**
-   * 打开表单编辑窗口
-   */
-  rowEdit?: (row: any, index: number) => {};
-  /**
-   * 打开表单查看窗口
-   */
-  rowView?: (row: any, index: number) => {};
-  /**
-   * 更新指定字典
-   */
-  updateDic?: (prop: any, dic: any) => {};
-  /**
-   * 重新加载全部字典
-   */
-  dicInit?: () => {};
-  /**
-   * 获取prop的ref对象
-   */
-  getPropRef?: (prop: any) => {};
-  /**
-   * 对整个表单进行校验的方法，参数为一个回调函数。该回调函数会在校验结束后被调用，并传入两个参数：是否校验成功和未通过校验的字段。若不传入回调函数，则会返回一个 promise
-   */
-  validate?: (valid: any, done: () => void, msg: any) => {};
-  /**
-   * 对部分表单字段进行校验的方法
-   */
-  validateField?: (props: any[]) => {};
-  /**
-   * 对整个表单进行重置，将所有字段值重置为初始值并移除校验结果
-   */
-  resetFields?: () => {};
-  /**
-   * 移除表单项的校验结果。传入待移除的表单项的 prop 属性或者 prop 组成的数组，如不传则移除整个表单的校验结果
-   */
-  clearValidate?: (props: any[]) => {};
-  /**
-   * 用于多选表格，清空用户的选择
-   */
-  clearSelection?: () => {};
-  /**
-   * 用于多选表格，传递数组进去，会勾选数组中的对象，如果已经勾选则会取消勾选
-   */
-  toggleSelection?: (array: any) => {};
-  /**
-   * 用于多选表格，切换所有行的选中状态
-   */
-  toggleAllSelection?: () => {};
-  /**
-   * 用于可展开表格与树形表格，切换某一行的展开状态，如果使用了第二个参数，则是设置这一行展开与否（expanded 为 true 则展开）
-   */
-  toggleRowExpansion?: (row: any, expanded: any) => {};
-  /**
-   * 用于单选表格，设定某一行为选中行，如果调用时不加参数，则会取消目前高亮行的选中状态。
-   */
-  setCurrentRow?: (row: any) => {};
-  /**
-   * 用于清空排序条件，数据会恢复成未排序的状态
-   */
-  clearSort?: () => {};
-  /**
-   * 不传入参数时用于清空所有过滤条件，数据会恢复成未过滤的状态，也可传入由columnKey组成的数组以清除指定列的过滤条件
-   */
-  clearFilter?: (columnKey: any) => {};
-  /**
-   * 对 Table 进行重新布局。当 Table 或其祖先元素由隐藏切换为显示时，可能需要调用此方法
-   */
-  doLayout?: () => {};
-  /**
-   * 进行重新初始化渲染
-   */
-  refreshTable?: () => {};
-  /**
-   * 手动对 Table 进行排序。参数prop属性指定排序列，order指定排序顺序。
-   */
-  sort?: (prop: string, order: string) => {};
-  [k: string]: unknown;
+    /**
+     * 打开表单新增窗口
+     */
+    rowAdd?: () => {};
+    /**
+     * 打开表单编辑窗口
+     */
+    rowEdit?: (row: any, index: number) => {};
+    /**
+     * 打开表单查看窗口
+     */
+    rowView?: (row: any, index: number) => {};
+    /**
+     * 更新指定字典
+     */
+    updateDic?: (prop: any, dic: any) => {};
+    /**
+     * 重新加载全部字典
+     */
+    dicInit?: () => {};
+    /**
+     * 获取prop的ref对象
+     */
+    getPropRef?: (prop: any) => {};
+    /**
+     * 对整个表单进行校验的方法，参数为一个回调函数。该回调函数会在校验结束后被调用，并传入两个参数：是否校验成功和未通过校验的字段。若不传入回调函数，则会返回一个 promise
+     */
+    validate?: (valid: any, done: () => void, msg: any) => {};
+    /**
+     * 对部分表单字段进行校验的方法
+     */
+    validateField?: (props: any[]) => {};
+    /**
+     * 对整个表单进行重置，将所有字段值重置为初始值并移除校验结果
+     */
+    resetFields?: () => {};
+    /**
+     * 移除表单项的校验结果。传入待移除的表单项的 prop 属性或者 prop 组成的数组，如不传则移除整个表单的校验结果
+     */
+    clearValidate?: (props: any[]) => {};
+    /**
+     * 用于多选表格，清空用户的选择
+     */
+    clearSelection?: () => {};
+    /**
+     * 用于多选表格，传递数组进去，会勾选数组中的对象，如果已经勾选则会取消勾选
+     */
+    toggleSelection?: (array: any) => {};
+    /**
+     * 用于多选表格，切换所有行的选中状态
+     */
+    toggleAllSelection?: () => {};
+    /**
+     * 用于可展开表格与树形表格，切换某一行的展开状态，如果使用了第二个参数，则是设置这一行展开与否（expanded 为 true 则展开）
+     */
+    toggleRowExpansion?: (row: any, expanded: any) => {};
+    /**
+     * 用于单选表格，设定某一行为选中行，如果调用时不加参数，则会取消目前高亮行的选中状态。
+     */
+    setCurrentRow?: (row: any) => {};
+    /**
+     * 用于清空排序条件，数据会恢复成未排序的状态
+     */
+    clearSort?: () => {};
+    /**
+     * 不传入参数时用于清空所有过滤条件，数据会恢复成未过滤的状态，也可传入由columnKey组成的数组以清除指定列的过滤条件
+     */
+    clearFilter?: (columnKey: any) => {};
+    /**
+     * 对 Table 进行重新布局。当 Table 或其祖先元素由隐藏切换为显示时，可能需要调用此方法
+     */
+    doLayout?: () => {};
+    /**
+     * 进行重新初始化渲染
+     */
+    refreshTable?: () => {};
+    /**
+     * 手动对 Table 进行排序。参数prop属性指定排序列，order指定排序顺序。
+     */
+    sort?: (prop: string, order: string) => {};
+    [k: string]: unknown;
 }

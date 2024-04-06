@@ -6,105 +6,105 @@
  */
 
 export interface Events {
-  /**
-   * 新增数据后点击确定触发该事件
-   */
-  "row-save"?: (row: any, done: () => void, loading: boolean) => {};
-  /**
-   * 更新数据后确定触发该事件
-   */
-  "row-update"?: (row: any, index: number, done: () => void, loading: boolean) => {};
-  /**
-   * 行数据删除时触发该事件
-   */
-  "row-del"?: (row: any, index: number) => {};
-  /**
-   * 点击刷新按钮触发该事件(由于page分页信息和search搜索信息，可以直接通过this.page和this.search拿到)
-   */
-  "refresh-change"?: () => {};
-  /**
-   * 点击搜索后触发该事件(由于page分页信息和search搜索信息，可以直接通过this.page和this.search拿到)
-   */
-  "search-change"?: (form: any, done: () => void) => {};
-  /**
-   * 清空搜索回调方法
-   */
-  "search-reset"?: () => {};
-  /**
-   * dateBtn为true时的选择日期回调方法
-   */
-  dateChange?: (date: any) => {};
-  /**
-   * 加载子节点数据的函数，lazy 为 true 时生效，函数第二个参数包含了节点的层级信息
-   */
-  "tree-load"?: (row: any, treeNode: any, resolve: any) => {};
-  /**
-   * 当用户手动勾选数据行的 Checkbox 时触发的事件
-   */
-  select?: (selection: any, row: any) => {};
-  /**
-   * 当用户手动勾选全选 Checkbox 时触发的事件
-   */
-  "select-all"?: (selection: any) => {};
-  /**
-   * 当选择项发生变化时会触发该事件
-   */
-  "selection-change"?: (selection: any) => {};
-  /**
-   * 当单元格 hover 进入时会触发该事件
-   */
-  "cell-mouse-enter"?: (row: any, column: any, cell: any, event: Event) => {};
-  /**
-   * 当单元格 hover 退出时会触发该事件
-   */
-  "cell-mouse-leave"?: (ow: any, column: any, cell: any, event: Event) => {};
-  /**
-   * 当某个单元格被点击时会触发该事件
-   */
-  "cell-click"?: (row: any, column: any, cell: any, event: Event) => {};
-  /**
-   * 当某个单元格被双击击时会触发该事件
-   */
-  "cell-dblclick"?: (row: any, column: any, cell: any, event: Event) => {};
-  /**
-   * 当某一行被点击时会触发该事件
-   */
-  "row-click"?: (row: any, column: any, event: Event) => {};
-  /**
-   * 当某一行被鼠标右键点击时会触发该事件
-   */
-  "row-contextmenu"?: (row: any, column: any, event: Event) => {};
-  /**
-   * 当某一行被双击时会触发该事件
-   */
-  "row-dblclick"?: (row: any, column: any, event: Event) => {};
-  /**
-   * 当某一列的表头被点击时会触发该事件
-   */
-  "header-click"?: (column: any, event: Event) => {};
-  /**
-   * 当某一列的表头被鼠标右键点击时触发该事件
-   */
-  "header-contextmenu"?: (column: any, event: Event) => {};
-  /**
-   * 当表格的排序条件发生变化的时候会触发该事件
-   */
-  "sort-change"?: (column: any, prop: any, order: any) => {};
-  /**
-   * 当表格的筛选条件发生变化的时候会触发该事件，参数的值是一个对象，对象的 key 是 column 的 columnKey，对应的 value 为用户选择的筛选条件的数组。
-   */
-  "filter-change"?: (filters: any) => {};
-  /**
-   * 当表格的当前行发生变化的时候会触发该事件，如果要高亮当前行，请打开表格的 highlightCurrentRow 属性
-   */
-  "current-row-change"?: (currentRow: any, oldCurrentRow: any) => {};
-  /**
-   * 当拖动表头改变了列的宽度的时候会触发该事件
-   */
-  "header-dragend"?: (newWidth: any, oldWidth: any, column: any, event: Event) => {};
-  /**
-   * 当用户对某一行展开或者关闭的时候会触发该事件（展开行时，回调的第二个参数为 expandedRows；树形表格时第二参数为 expanded）
-   */
-  "expand-change"?: (row: any, expandedRows: any) => {};
-  [k: string]: unknown;
+    /**
+     * 新增数据后点击确定触发该事件
+     */
+    "row-save"?: (row: any, done: () => void, loading: boolean) => {};
+    /**
+     * 更新数据后确定触发该事件
+     */
+    "row-update"?: (row: any, index: number, done: () => void, loading: boolean) => {};
+    /**
+     * 行数据删除时触发该事件
+     */
+    "row-del"?: (row: any, index: number) => {};
+    /**
+     * 点击刷新按钮触发该事件(由于page分页信息和search搜索信息，可以直接通过this.page和this.search拿到)
+     */
+    "refresh-change"?: () => {};
+    /**
+     * 点击搜索后触发该事件(由于page分页信息和search搜索信息，可以直接通过this.page和this.search拿到)
+     */
+    "search-change"?: (form: any, done: () => void) => {};
+    /**
+     * 清空搜索回调方法
+     */
+    "search-reset"?: () => {};
+    /**
+     * dateBtn为true时的选择日期回调方法
+     */
+    dateChange?: (date: any) => {};
+    /**
+     * 加载子节点数据的函数，lazy 为 true 时生效，函数第二个参数包含了节点的层级信息
+     */
+    "tree-load"?: (row: any, treeNode: any, resolve: any) => {};
+    /**
+     * 当用户手动勾选数据行的 Checkbox 时触发的事件
+     */
+    select?: (selection: any, row: any) => {};
+    /**
+     * 当用户手动勾选全选 Checkbox 时触发的事件
+     */
+    "select-all"?: (selection: any) => {};
+    /**
+     * 当选择项发生变化时会触发该事件
+     */
+    "selection-change"?: (selection: any) => {};
+    /**
+     * 当单元格 hover 进入时会触发该事件
+     */
+    "cell-mouse-enter"?: (row: any, column: any, cell: any, event: Event) => {};
+    /**
+     * 当单元格 hover 退出时会触发该事件
+     */
+    "cell-mouse-leave"?: (ow: any, column: any, cell: any, event: Event) => {};
+    /**
+     * 当某个单元格被点击时会触发该事件
+     */
+    "cell-click"?: (row: any, column: any, cell: any, event: Event) => {};
+    /**
+     * 当某个单元格被双击击时会触发该事件
+     */
+    "cell-dblclick"?: (row: any, column: any, cell: any, event: Event) => {};
+    /**
+     * 当某一行被点击时会触发该事件
+     */
+    "row-click"?: (row: any, column: any, event: Event) => {};
+    /**
+     * 当某一行被鼠标右键点击时会触发该事件
+     */
+    "row-contextmenu"?: (row: any, column: any, event: Event) => {};
+    /**
+     * 当某一行被双击时会触发该事件
+     */
+    "row-dblclick"?: (row: any, column: any, event: Event) => {};
+    /**
+     * 当某一列的表头被点击时会触发该事件
+     */
+    "header-click"?: (column: any, event: Event) => {};
+    /**
+     * 当某一列的表头被鼠标右键点击时触发该事件
+     */
+    "header-contextmenu"?: (column: any, event: Event) => {};
+    /**
+     * 当表格的排序条件发生变化的时候会触发该事件
+     */
+    "sort-change"?: (column: any, prop: any, order: any) => {};
+    /**
+     * 当表格的筛选条件发生变化的时候会触发该事件，参数的值是一个对象，对象的 key 是 column 的 columnKey，对应的 value 为用户选择的筛选条件的数组。
+     */
+    "filter-change"?: (filters: any) => {};
+    /**
+     * 当表格的当前行发生变化的时候会触发该事件，如果要高亮当前行，请打开表格的 highlightCurrentRow 属性
+     */
+    "current-row-change"?: (currentRow: any, oldCurrentRow: any) => {};
+    /**
+     * 当拖动表头改变了列的宽度的时候会触发该事件
+     */
+    "header-dragend"?: (newWidth: any, oldWidth: any, column: any, event: Event) => {};
+    /**
+     * 当用户对某一行展开或者关闭的时候会触发该事件（展开行时，回调的第二个参数为 expandedRows；树形表格时第二参数为 expanded）
+     */
+    "expand-change"?: (row: any, expandedRows: any) => {};
+    [k: string]: unknown;
 }

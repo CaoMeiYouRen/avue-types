@@ -4,489 +4,488 @@
  * DO NOT MODIFY IT BY HAND. Instead, modify the source JSONSchema file,
  * and run json-schema-to-typescript to regenerate this file.
  */
-
+import { Column } from './Column.d'
 export interface Option {
-  /**
-   * 组件的尺寸
-   */
-  size?: "medium" | "small" | "mini";
-  /**
-   * 表单列配置参考Column相关配置
-   * @type {array}
-   */
-  column?: unknown[];
-  /**
-   * 表格的高度，默认为自动高度。如果设置为auto，会自适应窗口高度，配合calcHeight参数去调节范围
-   */
-  height?: string;
-  /**
-   * 表格的最大高度
-   * @type {array}
-   */
-  maxHeight?: unknown[];
-  /**
-   * 是否为斑马纹
-   * @default false
-   */
-  stripe?: boolean;
-  /**
-   * 是否有序号
-   * @default false
-   */
-  index?: boolean;
-  /**
-   * 序号列宽度
-   * @default 50
-   */
-  indexWidth?: number;
-  /**
-   * 序号列是否冻结列
-   * @default true
-   */
-  indexFixed?: boolean;
-  /**
-   * 序号列的单元格自定义类名
-   */
-  indexClassName?: string;
-  /**
-   * 序号列标题的自定义类名
-   */
-  indexLabelClassName?: string;
-  /**
-   * 是否有操作栏
-   * @default true
-   */
-  menu?: boolean;
-  /**
-   * 操作栏宽度
-   * @default 220
-   */
-  menuWidth?: number;
-  /**
-   * 操作栏标题
-   * @default 标题
-   */
-  menuTitle?: string;
-  /**
-   * 操作栏列冻结列
-   * @default true
-   */
-  menuFixed?: boolean;
-  /**
-   * 操作栏列的单元格自定义类名
-   */
-  menuClassName?: string;
-  /**
-   * 操作栏列标题的自定义类名
-   */
-  menuLabelClassName?: string;
-  /**
-   * 操作栏按钮样式
-   */
-  menuType?: "button" | "icon" | "text" | "menu";
-  /**
-   * 操作栏表头的对齐方式
-   */
-  menuHeaderAlign?: "left" | "center" | "right";
-  /**
-   * 操作栏按钮的对齐方式
-   */
-  menuAlign?: "left" | "center" | "right";
-  /**
-   * 是否有选择框
-   * @default false
-   */
-  selection?: boolean;
-  /**
-   * 选择框列宽度
-   * @default 50
-   */
-  selectionWidth?: number;
-  /**
-   * 选择框列是否冻结列
-   * @default true
-   */
-  selectionFixed?: boolean;
-  /**
-   * 选择框列的单元格自定义类名
-   */
-  selectionClassName?: string;
-  /**
-   * 选择框列标题的自定义类名
-   */
-  selectionLabelClassName?: string;
-  /**
-   * 是否有展开表格
-   * @default false
-   */
-  expand?: boolean;
-  /**
-   * 展开列宽度
-   * @default 50
-   */
-  expandWidth?: number;
-  /**
-   * 展开列是否冻结列
-   * @default true
-   */
-  expandFixed?: boolean;
-  /**
-   * 展开列的单元格自定义类名
-   */
-  expandClassName?: string;
-  /**
-   * 展开列标题的自定义类名
-   */
-  expandLabelClassName?: string;
-  /**
-   * 是否带有纵向边框
-   * @default false
-   */
-  border?: boolean;
-  /**
-   * 在数据更新之后保留之前选中的数据（需指定 rowKey）
-   * @default false
-   */
-  reserveSelection?: boolean;
-  /**
-   * 列的宽度是否自撑开
-   * @default true
-   */
-  fit?: boolean;
-  /**
-   * 是否显示表头
-   * @default true
-   */
-  showHeader?: boolean;
-  /**
-   * 隐藏表格头部操作
-   * @default false
-   */
-  header?: boolean;
-  /**
-   * 是否要高亮当前行
-   * @default false
-   */
-  highlightCurrentRow?: boolean;
-  /**
-   * 行数据的 Key，用来优化 Table 的渲染；在使用 reserve-selection 功能与显示树形数据时，该属性是必填的。
-   * @default id
-   */
-  rowKey?: string;
-  /**
-   * 行数据的 Key，的父类Key用于局部刷新树形表格。
-   * @default parentId
-   */
-  rowParentKey?: string;
-  /**
-   * 空数据时显示的文本内容
-   * @default 暂无数据
-   */
-  emptyText?: string;
-  /**
-   * 是否默认展开所有行，当前表格包含展开行存在或者为树形表格时有效
-   * @default false
-   */
-  defaultExpandAll?: boolean;
-  /**
-   * 可以通过该属性设置 Table 目前的展开行，需要设置 rowKey 属性才能使用，该属性为展开行的 keys 数组。
-   * @type {array}
-   * @default
-   */
-  expandRowKeys?: unknown[];
-  /**
-   * 默认的排序列的 prop 和顺序。它的prop属性指定默认的排序的列，order指定默认排序的顺序
-   * @type {object}
-   */
-  defaultSort?: {
+    /**
+     * 组件的尺寸
+     */
+    size?: "medium" | "small" | "mini";
+    /**
+     * 表单列配置参考Column相关配置
+     */
+    column?: Column[];
+    /**
+     * 表格的高度，默认为自动高度。如果设置为auto，会自适应窗口高度，配合calcHeight参数去调节范围
+     */
+    height?: string;
+    /**
+     * 表格的最大高度
+     * @type {array}
+     */
+    maxHeight?: number;
+    /**
+     * 是否为斑马纹
+     * @default false
+     */
+    stripe?: boolean;
+    /**
+     * 是否有序号
+     * @default false
+     */
+    index?: boolean;
+    /**
+     * 序号列宽度
+     * @default 50
+     */
+    indexWidth?: number;
+    /**
+     * 序号列是否冻结列
+     * @default true
+     */
+    indexFixed?: boolean;
+    /**
+     * 序号列的单元格自定义类名
+     */
+    indexClassName?: string;
+    /**
+     * 序号列标题的自定义类名
+     */
+    indexLabelClassName?: string;
+    /**
+     * 是否有操作栏
+     * @default true
+     */
+    menu?: boolean;
+    /**
+     * 操作栏宽度
+     * @default 220
+     */
+    menuWidth?: number;
+    /**
+     * 操作栏标题
+     * @default 标题
+     */
+    menuTitle?: string;
+    /**
+     * 操作栏列冻结列
+     * @default true
+     */
+    menuFixed?: boolean;
+    /**
+     * 操作栏列的单元格自定义类名
+     */
+    menuClassName?: string;
+    /**
+     * 操作栏列标题的自定义类名
+     */
+    menuLabelClassName?: string;
+    /**
+     * 操作栏按钮样式
+     */
+    menuType?: "button" | "icon" | "text" | "menu";
+    /**
+     * 操作栏表头的对齐方式
+     */
+    menuHeaderAlign?: "left" | "center" | "right";
+    /**
+     * 操作栏按钮的对齐方式
+     */
+    menuAlign?: "left" | "center" | "right";
+    /**
+     * 是否有选择框
+     * @default false
+     */
+    selection?: boolean;
+    /**
+     * 选择框列宽度
+     * @default 50
+     */
+    selectionWidth?: number;
+    /**
+     * 选择框列是否冻结列
+     * @default true
+     */
+    selectionFixed?: boolean;
+    /**
+     * 选择框列的单元格自定义类名
+     */
+    selectionClassName?: string;
+    /**
+     * 选择框列标题的自定义类名
+     */
+    selectionLabelClassName?: string;
+    /**
+     * 是否有展开表格
+     * @default false
+     */
+    expand?: boolean;
+    /**
+     * 展开列宽度
+     * @default 50
+     */
+    expandWidth?: number;
+    /**
+     * 展开列是否冻结列
+     * @default true
+     */
+    expandFixed?: boolean;
+    /**
+     * 展开列的单元格自定义类名
+     */
+    expandClassName?: string;
+    /**
+     * 展开列标题的自定义类名
+     */
+    expandLabelClassName?: string;
+    /**
+     * 是否带有纵向边框
+     * @default false
+     */
+    border?: boolean;
+    /**
+     * 在数据更新之后保留之前选中的数据（需指定 rowKey）
+     * @default false
+     */
+    reserveSelection?: boolean;
+    /**
+     * 列的宽度是否自撑开
+     * @default true
+     */
+    fit?: boolean;
+    /**
+     * 是否显示表头
+     * @default true
+     */
+    showHeader?: boolean;
+    /**
+     * 隐藏表格头部操作
+     * @default false
+     */
+    header?: boolean;
+    /**
+     * 是否要高亮当前行
+     * @default false
+     */
+    highlightCurrentRow?: boolean;
+    /**
+     * 行数据的 Key，用来优化 Table 的渲染；在使用 reserve-selection 功能与显示树形数据时，该属性是必填的。
+     * @default id
+     */
+    rowKey?: string;
+    /**
+     * 行数据的 Key，的父类Key用于局部刷新树形表格。
+     * @default parentId
+     */
+    rowParentKey?: string;
+    /**
+     * 空数据时显示的文本内容
+     * @default 暂无数据
+     */
+    emptyText?: string;
+    /**
+     * 是否默认展开所有行，当前表格包含展开行存在或者为树形表格时有效
+     * @default false
+     */
+    defaultExpandAll?: boolean;
+    /**
+     * 可以通过该属性设置 Table 目前的展开行，需要设置 rowKey 属性才能使用，该属性为展开行的 keys 数组。
+     * @type {array}
+     * @default
+     */
+    expandRowKeys?: unknown[];
+    /**
+     * 默认的排序列的 prop 和顺序。它的prop属性指定默认的排序的列，order指定默认排序的顺序
+     * @type {object}
+     */
+    defaultSort?: {
+        [k: string]: unknown;
+    };
+    /**
+     * 是否在表尾显示合计行
+     * @default false
+     */
+    showSummary?: boolean;
+    /**
+     * 是否懒加载子节点数据,会调用tree-load方法回调
+     * @default false
+     */
+    lazy?: boolean;
+    /**
+     * 表格标题
+     */
+    title?: string;
+    /**
+     * 表格新增按钮
+     * @default true
+     */
+    addBtn?: boolean;
+    /**
+     * 表格新增按钮文案
+     * @default 新增
+     */
+    addBtnText?: string;
+    /**
+     * 表格新增按钮图标
+     */
+    addBtnIcon?: string;
+    /**
+     * 表格修改按钮
+     * @default true
+     */
+    editBtn?: boolean;
+    /**
+     * 表格修改按钮文案
+     * @default 修改
+     */
+    editBtnText?: string;
+    /**
+     * 表格修改按钮图标
+     */
+    editBtnIcon?: string;
+    /**
+     * 表格删除按钮
+     * @default true
+     */
+    delBtn?: boolean;
+    /**
+     * 表格删除按钮文案
+     * @default 删除
+     */
+    delBtnText?: string;
+    /**
+     * 表格删除按钮图标
+     */
+    delBtnIcon?: string;
+    /**
+     * 表格查看按钮
+     * @default false
+     */
+    viewBtn?: boolean;
+    /**
+     * 表格查看按钮文案
+     * @default 查看
+     */
+    viewBtnText?: string;
+    /**
+     * 表格查看按钮图标
+     */
+    viewBtnIcon?: string;
+    /**
+     * 表格弹窗修改按钮
+     * @default true
+     */
+    updateBtn?: boolean;
+    /**
+     * 表格弹窗修改按钮文案
+     * @default 修改
+     */
+    updateBtnText?: string;
+    /**
+     * 表格弹窗修改按钮图标
+     */
+    updateBtnIcon?: string;
+    /**
+     * 表格弹窗保存按钮
+     * @default true
+     */
+    saveBtn?: boolean;
+    /**
+     * 表格弹窗保存按钮文案
+     * @default 保存
+     */
+    saveBtnText?: string;
+    /**
+     * 表格弹窗保存按钮图标
+     */
+    saveBtnIcon?: string;
+    /**
+     * 表格弹窗取消按钮
+     * @default true
+     */
+    cancelBtn?: boolean;
+    /**
+     * 表格弹窗取消按钮文案
+     * @default 取消
+     */
+    cancelBtnText?: string;
+    /**
+     * 表格弹窗取消按钮图标
+     */
+    cancelBtnIcon?: string;
+    /**
+     * 表格搜索按钮
+     * @default true
+     */
+    searchBtn?: boolean;
+    /**
+     * 表格搜索按钮文案
+     * @default 搜索
+     */
+    searchBtnText?: string;
+    /**
+     * 表格搜索按钮图标
+     */
+    searchBtnIcon?: string;
+    /**
+     * 表格清空按钮
+     * @default true
+     */
+    emptyBtn?: boolean;
+    /**
+     * 表格清空按钮文案
+     * @default 清空
+     */
+    emptyBtnText?: string;
+    /**
+     * 表格清空按钮图标
+     */
+    emptyBtnIcon?: string;
+    /**
+     * 表格打印按钮
+     * @default false
+     */
+    printBtn?: boolean;
+    /**
+     * 表格导出按钮
+     * @default false
+     */
+    excelBtn?: boolean;
+    /**
+     * 表格自定义过滤按钮
+     * @default false
+     */
+    filterBtn?: boolean;
+    /**
+     * 表格刷新数据按钮
+     * @default true
+     */
+    refreshBtn?: boolean;
+    /**
+     * 表格列操作按钮
+     * @default true
+     */
+    columnBtn?: boolean;
+    /**
+     * 表格搜索显隐按钮
+     * @default true
+     */
+    searchShowBtn?: boolean;
+    /**
+     * 表格复制数据按钮
+     * @default false
+     */
+    copyBtn?: boolean;
+    /**
+     * 表格新增弹窗标题
+     * @default 新增
+     */
+    addTitle?: string;
+    /**
+     * 表格修改弹窗标题
+     * @default false
+     */
+    editTitle?: boolean;
+    /**
+     * 表格查看弹窗标题
+     * @default false
+     */
+    viewTitle?: boolean;
+    /**
+     * 表格弹窗是否可以拖拽
+     * @default false
+     */
+    dialogDrag?: boolean;
+    /**
+     * 表格弹窗是否为全屏
+     * @default false
+     */
+    dialogFullscreen?: boolean;
+    /**
+     * 表格弹窗自定义class
+     */
+    dialogCustomClass?: string;
+    /**
+     * 表格弹窗是否可以通过按下ESC关闭
+     * @default true
+     */
+    dialogEscape?: boolean;
+    /**
+     * 表格弹窗是否可以通过点击modal关闭
+     * @default false
+     */
+    dialogClickModal?: boolean;
+    /**
+     * 表格弹窗是否显示关闭按钮
+     * @default true
+     */
+    dialogCloseBtn?: boolean;
+    /**
+     * 表格弹窗是否需要遮罩层
+     * @default true
+     */
+    dialogModal?: boolean;
+    /**
+     * 表格弹窗框按钮的位置
+     */
+    dialogMenuPosition?: "left" | "center" | "right";
+    /**
+     * 表格弹窗顶部的距离
+     * @default 25
+     */
+    dialogTop?: number;
+    /**
+     * 表格弹窗方式
+     */
+    dialogType?: "dialog" | "drawer";
+    /**
+     * 表格弹窗打开方向
+     */
+    dialogDirection?: "rtl" | "ltr" | "ttb" | "tbb";
+    /**
+     * 表格弹窗宽度
+     * @default 60%
+     */
+    dialogWidth?: string;
+    /**
+     * 表格搜索首次是否展示
+     * @default true
+     */
+    searchShow?: boolean;
+    /**
+     * 表格搜索半收缩按钮
+     * @default false
+     */
+    searchIcon?: boolean;
+    /**
+     * 表格搜索半收缩个数
+     * @default 2
+     */
+    searchIndex?: number;
+    /**
+     * 表格搜索按钮位置
+     */
+    searchMenuPosition?: "left" | "center" | "right";
+    /**
+     * 搜索项辅助文字
+     */
+    searchPlaceholder?: string;
+    /**
+     * 搜索项框栅列
+     * @default 8
+     */
+    searchSpan?: number;
+    /**
+     * 搜索项框间距
+     */
+    searchGutter?: number;
+    /**
+     * 搜索项标题宽度
+     * @default 80
+     */
+    searchLabelWidth?: number;
+    /**
+     * 搜索项标题位置
+     */
+    searchLabelPosition?: "left" | "right" | "top";
     [k: string]: unknown;
-  };
-  /**
-   * 是否在表尾显示合计行
-   * @default false
-   */
-  showSummary?: boolean;
-  /**
-   * 是否懒加载子节点数据,会调用tree-load方法回调
-   * @default false
-   */
-  lazy?: boolean;
-  /**
-   * 表格标题
-   */
-  title?: string;
-  /**
-   * 表格新增按钮
-   * @default true
-   */
-  addBtn?: boolean;
-  /**
-   * 表格新增按钮文案
-   * @default 新增
-   */
-  addBtnText?: string;
-  /**
-   * 表格新增按钮图标
-   */
-  addBtnIcon?: string;
-  /**
-   * 表格修改按钮
-   * @default true
-   */
-  editBtn?: boolean;
-  /**
-   * 表格修改按钮文案
-   * @default 修改
-   */
-  editBtnText?: string;
-  /**
-   * 表格修改按钮图标
-   */
-  editBtnIcon?: string;
-  /**
-   * 表格删除按钮
-   * @default true
-   */
-  delBtn?: boolean;
-  /**
-   * 表格删除按钮文案
-   * @default 删除
-   */
-  delBtnText?: string;
-  /**
-   * 表格删除按钮图标
-   */
-  delBtnIcon?: string;
-  /**
-   * 表格查看按钮
-   * @default false
-   */
-  viewBtn?: boolean;
-  /**
-   * 表格查看按钮文案
-   * @default 查看
-   */
-  viewBtnText?: string;
-  /**
-   * 表格查看按钮图标
-   */
-  viewBtnIcon?: string;
-  /**
-   * 表格弹窗修改按钮
-   * @default true
-   */
-  updateBtn?: boolean;
-  /**
-   * 表格弹窗修改按钮文案
-   * @default 修改
-   */
-  updateBtnText?: string;
-  /**
-   * 表格弹窗修改按钮图标
-   */
-  updateBtnIcon?: string;
-  /**
-   * 表格弹窗保存按钮
-   * @default true
-   */
-  saveBtn?: boolean;
-  /**
-   * 表格弹窗保存按钮文案
-   * @default 保存
-   */
-  saveBtnText?: string;
-  /**
-   * 表格弹窗保存按钮图标
-   */
-  saveBtnIcon?: string;
-  /**
-   * 表格弹窗取消按钮
-   * @default true
-   */
-  cancelBtn?: boolean;
-  /**
-   * 表格弹窗取消按钮文案
-   * @default 取消
-   */
-  cancelBtnText?: string;
-  /**
-   * 表格弹窗取消按钮图标
-   */
-  cancelBtnIcon?: string;
-  /**
-   * 表格搜索按钮
-   * @default true
-   */
-  searchBtn?: boolean;
-  /**
-   * 表格搜索按钮文案
-   * @default 搜索
-   */
-  searchBtnText?: string;
-  /**
-   * 表格搜索按钮图标
-   */
-  searchBtnIcon?: string;
-  /**
-   * 表格清空按钮
-   * @default true
-   */
-  emptyBtn?: boolean;
-  /**
-   * 表格清空按钮文案
-   * @default 清空
-   */
-  emptyBtnText?: string;
-  /**
-   * 表格清空按钮图标
-   */
-  emptyBtnIcon?: string;
-  /**
-   * 表格打印按钮
-   * @default false
-   */
-  printBtn?: boolean;
-  /**
-   * 表格导出按钮
-   * @default false
-   */
-  excelBtn?: boolean;
-  /**
-   * 表格自定义过滤按钮
-   * @default false
-   */
-  filterBtn?: boolean;
-  /**
-   * 表格刷新数据按钮
-   * @default true
-   */
-  refreshBtn?: boolean;
-  /**
-   * 表格列操作按钮
-   * @default true
-   */
-  columnBtn?: boolean;
-  /**
-   * 表格搜索显隐按钮
-   * @default true
-   */
-  searchShowBtn?: boolean;
-  /**
-   * 表格复制数据按钮
-   * @default false
-   */
-  copyBtn?: boolean;
-  /**
-   * 表格新增弹窗标题
-   * @default 新增
-   */
-  addTitle?: string;
-  /**
-   * 表格修改弹窗标题
-   * @default false
-   */
-  editTitle?: boolean;
-  /**
-   * 表格查看弹窗标题
-   * @default false
-   */
-  viewTitle?: boolean;
-  /**
-   * 表格弹窗是否可以拖拽
-   * @default false
-   */
-  dialogDrag?: boolean;
-  /**
-   * 表格弹窗是否为全屏
-   * @default false
-   */
-  dialogFullscreen?: boolean;
-  /**
-   * 表格弹窗自定义class
-   */
-  dialogCustomClass?: string;
-  /**
-   * 表格弹窗是否可以通过按下ESC关闭
-   * @default true
-   */
-  dialogEscape?: boolean;
-  /**
-   * 表格弹窗是否可以通过点击modal关闭
-   * @default false
-   */
-  dialogClickModal?: boolean;
-  /**
-   * 表格弹窗是否显示关闭按钮
-   * @default true
-   */
-  dialogCloseBtn?: boolean;
-  /**
-   * 表格弹窗是否需要遮罩层
-   * @default true
-   */
-  dialogModal?: boolean;
-  /**
-   * 表格弹窗框按钮的位置
-   */
-  dialogMenuPosition?: "left" | "center" | "right";
-  /**
-   * 表格弹窗顶部的距离
-   * @default 25
-   */
-  dialogTop?: number;
-  /**
-   * 表格弹窗方式
-   */
-  dialogType?: "dialog" | "drawer";
-  /**
-   * 表格弹窗打开方向
-   */
-  dialogDirection?: "rtl" | "ltr" | "ttb" | "tbb";
-  /**
-   * 表格弹窗宽度
-   * @default 60%
-   */
-  dialogWidth?: string;
-  /**
-   * 表格搜索首次是否展示
-   * @default true
-   */
-  searchShow?: boolean;
-  /**
-   * 表格搜索半收缩按钮
-   * @default false
-   */
-  searchIcon?: boolean;
-  /**
-   * 表格搜索半收缩个数
-   * @default 2
-   */
-  searchIndex?: number;
-  /**
-   * 表格搜索按钮位置
-   */
-  searchMenuPosition?: "left" | "center" | "right";
-  /**
-   * 搜索项辅助文字
-   */
-  searchPlaceholder?: string;
-  /**
-   * 搜索项框栅列
-   * @default 8
-   */
-  searchSpan?: number;
-  /**
-   * 搜索项框间距
-   */
-  searchGutter?: number;
-  /**
-   * 搜索项标题宽度
-   * @default 80
-   */
-  searchLabelWidth?: number;
-  /**
-   * 搜索项标题位置
-   */
-  searchLabelPosition?: "left" | "right" | "top";
-  [k: string]: unknown;
 }
