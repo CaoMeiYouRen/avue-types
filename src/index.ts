@@ -1,16 +1,8 @@
-import { __PROD__, __DEV__ } from '@/env'
-/**
- * say hello
- *
- * @author CaoMeiYouRen
- * @date 2020-11-28
- * @export
- */
-export function hello() {
-    if (__PROD__) {
-        console.log('Hello production')
-    }
-    if (__DEV__) {
-        console.log('Hello development')
-    }
-}
+export * from './types/ColumnCommonProps.d'
+export * from './types/ColumnDicProps.d'
+export * from './types/ColumnProps.d'
+export * from './types/Crud.d'
+export * from './types/Events.d'
+export * from './types/Methods.d'
+export * from './types/Option.d'
+export * from './types/Page.d'
