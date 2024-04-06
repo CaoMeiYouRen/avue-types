@@ -1,0 +1,94 @@
+{
+  "name": "@cao-mei-you-ren/avue-types",
+  "version": "0.1.0",
+  "description": "Avue 的类型声明",
+  "author": "CaoMeiYouRen",
+  "private": false,
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=16"
+  },
+  "scripts": {
+    "lint": "cross-env NODE_ENV=production eslint src --fix --ext .ts,.js,.cjs,.mjs",
+    "release": "semantic-release",
+    "prebuild": "rimraf dist",
+    "build": "cross-env NODE_ENV=production tsup",
+    "dev": "cross-env NODE_ENV=development tsx watch src/index.ts",
+    "dev:tsup": "cross-env NODE_ENV=development tsup --watch",
+    "start": "node ./dist/index",
+    "commit": "cz",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.2.1",
+    "@commitlint/config-conventional": "^19.1.0",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@types/debug": "^4.1.12",
+    "@types/node": "^20.11.30",
+    "@typescript-eslint/eslint-plugin": "^7.4.0",
+    "@typescript-eslint/parser": "^7.4.0",
+    "commitizen": "^4.3.0",
+    "conventional-changelog-cli": "^4.1.0",
+    "conventional-changelog-cmyr-config": "^2.1.1",
+    "cross-env": "^7.0.3",
+    "cz-conventional-changelog": "^3.3.0",
+    "cz-conventional-changelog-cmyr": "^1.1.0",
+    "debug": "^4.3.4",
+    "eslint": "^8.57.0",
+    "eslint-config-cmyr": "^1.1.30",
+    "eslint-plugin-import": "^2.28.1",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "rimraf": "^5.0.5",
+    "semantic-release": "21.0.1",
+    "tsup": "^8.0.2",
+    "tsx": "^4.7.1",
+    "typescript": "^5.4.3"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog-cmyr"
+    }
+  },
+  "changelog": {
+    "language": "zh"
+  },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "npm run lint",
+      "git add"
+    ]
+  },
+  "keywords": [
+    "tsup",
+    "typescript",
+    "template"
+  ],
+  "homepage": "https://github.com/CaoMeiYouRen/avue-types#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CaoMeiYouRen/avue-types.git"
+  },
+  "bugs": {
+    "url": "https://github.com/CaoMeiYouRen/avue-types/issues"
+  },
+  "dependencies": {
+    "tslib": "^2.6.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
